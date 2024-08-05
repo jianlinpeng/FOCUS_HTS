@@ -4,7 +4,7 @@
 import sys
 import json
 sys.path.append('iteration')
-import main
+from iteration import main
 # 待添加：电流优化项, 磁面数据生成
 args = {
 
@@ -32,7 +32,7 @@ args = {
     'inequality_constraint':    's',
 
     # 优化算法参数:jax, 通过设置迭代步长是否为0可以控制优化
-    'number_iteration':         0,        # (ni)  int,    优化器迭代次数（for循环）, 若为0, 则不迭代
+    'number_iteration':         5,        # (ni)  int,    优化器迭代次数（for循环）, 若为0, 则不迭代
     'optimizer_coil':           'momentum', # (opt) str,    线圈参数迭代方法,  (sgd, gd, momentum, or adam)  
     'optimizer_alpha':          'momentum', # (opt) str,    旋转参数迭代方法,  (sgd, gd, momentum, or adam)  
     'optimizer_I':              'momentum', # (opt) str,    电流参数迭代方法,  (sgd, gd, momentum, or adam)  
@@ -48,7 +48,7 @@ args = {
     'number_field_periods':     5,          # (nfp) int,    线圈周期数                     
     'stellarator_symmetry':     1,          # (ss)  int,    仿星器对称，1:对称，0:非对称                     
     'number_independent_coils': 5,          # (nic) int,    独立线圈数(半周期线圈数), (nc=nfp*(ss+1)*nic)                     
-    'number_segments':          64,         # (ns)  int,    每个线圈分段数   
+    'number_segments':          32,         # (ns)  int,    每个线圈分段数   
     
     # 线圈输入方式      
     'coil_case':                'fourier',  #       str,    线圈表示方法, 'spline' or 'fourier' or 'spline_local'
@@ -213,5 +213,5 @@ with open('initfiles/init_args.json', 'w') as f:
     json.dump(args, f, indent=4)
 
 
-main.main()
+# main.main()
 

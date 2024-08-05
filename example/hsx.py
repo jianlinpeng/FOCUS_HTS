@@ -4,7 +4,7 @@
 import sys
 import json
 sys.path.append('iteration')
-import main
+from iteration import main
 # 待添加：电流优化项, 磁面数据生成
 args = {
 
@@ -213,5 +213,5 @@ with open('initfiles/init_args.json', 'w') as f:
     json.dump(args, f, indent=4)
 
 
-main.main()
+# main.main()
 
