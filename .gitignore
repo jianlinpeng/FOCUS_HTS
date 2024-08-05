@@ -1,0 +1,9 @@
+__pycache__/*
+iteration/__pycache__/*
+HTS/__pycache__/*
+*.pyc
+*.npy
+*.h5
+*.focus_vmec
+assets/*
+*.png
